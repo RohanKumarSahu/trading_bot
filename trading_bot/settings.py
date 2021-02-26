@@ -25,7 +25,7 @@ SECRET_KEY = '2(5&q812)gsnf(q0_0x$05vmbp4^p8&66q%1k@48gawkwqw%_!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://atgenx-tradingbot.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['atgenx-tradingbot.herokuapp.com','127.0.0.1']
 
 
 # Application definition
