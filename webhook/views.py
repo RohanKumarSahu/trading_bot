@@ -9,5 +9,4 @@ from django.views.decorators.http import require_POST
 def webhooks(request):
     jsondata = request.body
     data = json.loads(jsondata)
-
-return HttpResponse(status=200)
+    return HttpResponse(status=200)
