@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from webhook import views
+from .router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('webhooks/', views.webhooks, name='webhooks'),
+    path('', include('webhook.urls')),
+    path('api/', include(router.urls)),
 ]
