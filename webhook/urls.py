@@ -3,6 +3,6 @@ from .views import webhooks, home
 
 
 urlpatterns = [
-    path('',home , name='home')
+    path('', home, name='home'),
     path('webhook/', webhooks , name = 'webhook' ),   
 ]
