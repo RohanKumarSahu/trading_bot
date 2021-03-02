@@ -19,8 +19,8 @@ def webhooks(request):
     json_dump = json.dumps(data)
     print(json_dump)
 
-    response = HttpResponse(json_dump, content_type='application/json')
-    response['Content-Disposition'] = 'attachment; filename="data.json"'
+    response = HttpResponse(json_dump, content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="data.csv"'
 
     return HttpResponse(status=200)
 
