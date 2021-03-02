@@ -9,7 +9,8 @@ from .serializers import DataSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-
+def home(request):
+    return render(request, "index.html")
 
 
 @csrf_exempt
