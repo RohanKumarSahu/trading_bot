@@ -21,7 +21,7 @@ def webhooks(request):
 
     response = HttpResponse(json_dump, content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="data.csv"'
-
+    return response
     return HttpResponse(status=200)
 
 
