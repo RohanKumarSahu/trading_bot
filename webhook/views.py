@@ -22,21 +22,11 @@ def webhooks(request):
 
     with open('data.json', 'w') as json_file:
         json.dump(data, json_file)
-        print('file created')
     print(data)
-    # file_location = os.listdir('./asset/data.json')
-    
-    # with open(file_location, 'w') as json_file:
-    #     json.dump(data, json_file)
-     
-    # file = open(file_location, 'r')
-    # print("FROM FILE" + file.read())
+    response = HttpResponse(data.json, content_type='application/json')
+    response['Content-Disposition'] = 'attachment; filename="exported_data.json"'
+    return response
 
-
-    # response = HttpResponse(json_dump, content_type='text/csv')
-    # #print(response)
-    # response['Content-Disposition'] = 'attachment; filename="data.csv"'
-    # return response
     return HttpResponse(status=200)
 
 
