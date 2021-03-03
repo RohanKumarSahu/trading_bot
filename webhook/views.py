@@ -21,7 +21,7 @@ def webhooks(request):
 
 
     with open('data.json', 'w') as json_file:
-    json.dump(data, json_file)
+        json.dump(data, json_file)
 
     # file_location = os.listdir('./asset/data.json')
     
