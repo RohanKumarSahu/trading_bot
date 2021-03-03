@@ -21,9 +21,10 @@ def webhooks(request):
 
     with open('data.json', 'w') as json_file:
         json.dump(data, json_file)
-        print(data)
+        
     response = HttpResponse(data, content_type='application/json')
     response['Content-Disposition'] = 'attachment; filename="exported_data.json"'
+    print(data)
     return response
 
    
