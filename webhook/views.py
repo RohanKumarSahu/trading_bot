@@ -18,18 +18,23 @@ def home(request):
 def webhooks(request):
     jsondata = request.body
     data = json.loads(jsondata)
-    file_location = os.listdir('./asset/data.json')
+
+
+    with open('data.json', 'w') as json_file:
+    json.dump(data, json_file)
+
+    # file_location = os.listdir('./asset/data.json')
     
-    with open(file_location, 'w') as json_file:
-        json.dump(data, json_file)
-    # print(json_dump)
-    file = open(file_location, 'r')
-    print("FROM FILE" + file.read())
+    # with open(file_location, 'w') as json_file:
+    #     json.dump(data, json_file)
+    #  print(json_dump)
+    # file = open(file_location, 'r')
+    # print("FROM FILE" + file.read())
 
 
-    response = HttpResponse(json_dump, content_type='text/csv')
-    #print(response)
-    response['Content-Disposition'] = 'attachment; filename="data.csv"'
+    # response = HttpResponse(json_dump, content_type='text/csv')
+    # #print(response)
+    # response['Content-Disposition'] = 'attachment; filename="data.csv"'
     return response
     return HttpResponse(status=200)
 
