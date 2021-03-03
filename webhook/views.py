@@ -22,12 +22,13 @@ def webhooks(request):
 
     with open('data.json', 'w') as json_file:
         json.dump(data, json_file)
-
+        print('file created')
+    print(data)
     # file_location = os.listdir('./asset/data.json')
     
     # with open(file_location, 'w') as json_file:
     #     json.dump(data, json_file)
-    #  print(json_dump)
+     
     # file = open(file_location, 'r')
     # print("FROM FILE" + file.read())
 
